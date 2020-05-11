@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xyz.testbench.app.modular.system.dao.PayLogMapper">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.xyz.testbench.app.modular.system.model.PayLog">
+		<id column="id" property="id" />
+		<result column="uid" property="uid" />
+		<result column="code" property="code" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		id, uid, code
+	</sql>
+
+	<select id="findByUidAndCode" resultType="com.xyz.testbench.app.modular.system.model.PayLog">
+		select
+		<include refid="Base_Column_List" />
+		from pay_log where uid = #{uid} and code = #{code}
+	</select>
+
+	<insert id="inserPayLog" parameterType="com.xyz.testbench.app.modular.system.model.PayLog">
+		insert into `pay_log`
+		<trim prefix="(" suffix=")" suffixOverrides="," >
+			<if test="uid != null" >
+				uid,
+			</if>
+			<if test="code != null" >
+				code,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides="," >
+			<if test="uid != null" >
+				#{uid,jdbcType=VARCHAR},
+			</if>
+			<if test="code != null" >
+				#{code,jdbcType=BIGINT},
+			</if>
+		</trim>
+	</insert>
+
+</mapper>
