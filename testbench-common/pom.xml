@@ -18,11 +18,11 @@
             <artifactId>jackson-core-asl</artifactId>
             <version>1.9.8</version>
         </dependency>
-        <dependency>
+   <!--     <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-mapper-asl</artifactId>
             <version>1.9.8</version>
-        </dependency>
+        </dependency>-->
 
     </dependencies>
 
