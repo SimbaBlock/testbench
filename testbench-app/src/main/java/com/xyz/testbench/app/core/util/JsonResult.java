@@ -1,7 +1,7 @@
 package com.xyz.testbench.app.core.util;
 
+import com.alibaba.fastjson.JSONObject;
 import com.xyz.testbench.app.core.common.exception.BizExceptionEnum;
-import com.xyz.testbench.common.util.Json;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -52,7 +52,7 @@ public class JsonResult {
      * @return
      */
     public String toJson() {
-        return Json.toJson(this);
+        return JSONObject.toJSONString(this);
     }
 
     /**
@@ -90,7 +90,7 @@ public class JsonResult {
     public JsonResult addData(Object value) {
         if (value != null) {
             initData();
-            data.putAll(Json.toObject(Json.toJson(value), Map.class));
+            data.putAll(JSONObject.parseObject(JSONObject.toJSONString(value), Map.class));
         }
         return this;
     }
