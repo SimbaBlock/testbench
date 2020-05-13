@@ -28,11 +28,6 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>com.xyz</groupId>
-            <artifactId>testbench-common</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
         <!--代码生成器-->
         <dependency>
             <groupId>cn.stylefeng.guns</groupId>
@@ -137,13 +132,6 @@
             <artifactId>ehcache</artifactId>
             <version>${ehcache.version}</version>
         </dependency>
-
-        <!--验证码-->
-        <!--<dependency>-->
-            <!--<groupId>com.github.penggle</groupId>-->
-            <!--<artifactId>kaptcha</artifactId>-->
-            <!--<version>${kaptcha.version}</version>-->
-        <!--</dependency>-->
 
         <!--beetl模板引擎-->
         <dependency>

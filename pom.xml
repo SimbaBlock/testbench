@@ -16,7 +16,6 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>testbench-app</module>
-        <module>testbench-common</module>
     </modules>
 
     <dependencies>
